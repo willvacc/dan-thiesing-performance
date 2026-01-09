@@ -4,12 +4,12 @@ import Button from "@/components/ui/Button";
 
 export default function CoachingPage() {
     return (
-        <div className="space-y-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
             {/* ============================= */}
-            {/* HERO / INTRO + PRIMARY CTA */}
+            {/* HERO */}
             {/* ============================= */}
             <Reveal>
-                <div className="rounded-3xl border border-black/5 bg-white/70 p-12 shadow-sm backdrop-blur">
+                <div className="rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 md:p-12 shadow-sm backdrop-blur">
                     <div className="max-w-3xl">
                         <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-black/85">
                             1 on 1 Online Coaching
@@ -21,7 +21,7 @@ export default function CoachingPage() {
                         </p>
 
                         <div className="mt-8">
-                            <Button asChild variant="primary">
+                            <Button asChild variant="primary" className="w-full sm:w-auto">
                                 <a
                                     href="https://calendly.com/danthiesing"
                                     target="_blank"
@@ -35,10 +35,10 @@ export default function CoachingPage() {
             </Reveal>
 
             {/* ============================= */}
-            {/* PROOF / CREDIBILITY SECTION */}
+            {/* WHO IT’S FOR */}
             {/* ============================= */}
             <Reveal delay={0.08}>
-                <div className="grid gap-8 lg:grid-cols-2">
+                <div className="grid gap-10 lg:grid-cols-2">
                     {[
                         {
                             title: "Built for High-Level Athletes",
@@ -48,28 +48,24 @@ export default function CoachingPage() {
                                 "The same principles used with professional athletes apply to every program; structured progression, measurable performance, and long-term durability.",
                                 "Training decisions are intentional, data-driven, and aligned with competitive demands.",
                             ],
-                            emphasis: true,
                         },
                         {
-                            title: "And Every Day Gym Goers",
+                            title: "And Everyday Gym Goers",
                             img: "/college-lacrosse.png",
                             alt: "College lacrosse athlete performing velocity-based strength training",
                             copy: [
                                 "Structured programs designed to take the guesswork out of the gym. Built for individuals who want clarity, progression, and real strength gains.",
                                 "Nothing is generic; every plan is built around the individual.",
                             ],
-                            emphasis: false,
                         },
                     ].map((card) => (
                         <div
                             key={card.title}
-                            className={`h-[420px] rounded-3xl border ${card.emphasis
-                                    ? "border-black/10 bg-white/80 shadow-md"
-                                    : "border-black/5 bg-white/70 shadow-sm"
-                                } p-8 backdrop-blur`}
+                            className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur"
                         >
-                            <div className="grid h-full gap-6 md:grid-cols-2 items-center">
-                                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+                            <div className="grid gap-6 md:grid-cols-2">
+                                {/* Image */}
+                                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
                                     <Image
                                         src={card.img}
                                         alt={card.alt}
@@ -78,7 +74,8 @@ export default function CoachingPage() {
                                     />
                                 </div>
 
-                                <div className="flex h-full flex-col justify-center">
+                                {/* Text */}
+                                <div className="flex flex-col justify-center">
                                     <h2 className="text-2xl font-semibold text-black/85">
                                         {card.title}
                                     </h2>
@@ -100,7 +97,7 @@ export default function CoachingPage() {
             {/* ============================= */}
             {/* HOW IT WORKS */}
             {/* ============================= */}
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-3">
                 {[
                     {
                         title: "Custom Plan",
@@ -116,7 +113,7 @@ export default function CoachingPage() {
                     },
                 ].map((item, i) => (
                     <Reveal key={item.title} delay={0.06 * i}>
-                        <div className="h-[150px] rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur flex flex-col justify-center">
+                        <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur">
                             <div className="font-semibold text-black/80">
                                 {item.title}
                             </div>
@@ -129,10 +126,10 @@ export default function CoachingPage() {
             </div>
 
             {/* ============================= */}
-            {/* TRAINING ENVIRONMENT */}
+            {/* TRAINING GALLERY */}
             {/* ============================= */}
             <Reveal delay={0.12}>
-                <div className="rounded-3xl border border-black/5 bg-white/60 p-10 shadow-sm backdrop-blur">
+                <div className="rounded-3xl border border-black/5 bg-white/60 p-8 sm:p-10 shadow-sm backdrop-blur">
                     <div className="max-w-2xl mb-8">
                         <h3 className="text-2xl font-semibold text-black/85">
                             What Training Looks Like
@@ -143,11 +140,11 @@ export default function CoachingPage() {
                         </p>
                     </div>
 
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
                         {[
                             "/example-1.png",
-                            "/example-3.jpg",
                             "/example-2.png",
+                            "/example-3.jpg",
                             "/example-4.jpg",
                             "/example-5.jpg",
                         ].map((src) => (
@@ -171,7 +168,7 @@ export default function CoachingPage() {
             {/* FINAL CTA */}
             {/* ============================= */}
             <Reveal delay={0.1}>
-                <div className="rounded-3xl border border-black/5 bg-white/60 p-10 shadow-sm backdrop-blur text-center">
+                <div className="rounded-3xl border border-black/5 bg-white/60 p-8 sm:p-10 shadow-sm backdrop-blur text-center">
                     <h3 className="text-2xl font-semibold text-black/85">
                         Ready to Get Started?
                     </h3>
@@ -181,7 +178,7 @@ export default function CoachingPage() {
                     </p>
 
                     <div className="mt-6">
-                        <Button asChild variant="primary">
+                        <Button asChild variant="primary" className="w-full sm:w-auto">
                             <a href="https://calendly.com/danthiesing" target="_blank">
                                 Book Your Consultation
                             </a>

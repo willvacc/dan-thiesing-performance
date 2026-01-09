@@ -195,7 +195,7 @@ export default function HomePage() {
       </section>
 
       {/* CONTACT CTA */}
-      <section className="rounded-3xl border border-black/5 bg-white/70 p-10 shadow-sm backdrop-blur">
+      <section className="relative z-20 rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 shadow-sm backdrop-blur">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h3 className="text-xl font-bold text-black/85">Not sure what fits?</h3>
@@ -203,7 +203,12 @@ export default function HomePage() {
               Reach out and we’ll point you to the right plan.
             </p>
           </div>
-          <Button asChild variant="primary">
+
+          <Button
+            asChild
+            variant="primary"
+            className="relative z-30 pointer-events-auto w-full sm:w-auto"
+          >
             <Link href="/contact">Contact</Link>
           </Button>
         </div>

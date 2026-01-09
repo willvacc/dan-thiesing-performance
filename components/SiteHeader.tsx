@@ -82,7 +82,7 @@ export default function SiteHeader() {
 
             {/* MOBILE MENU */}
             {open && (
-                <div className="md:hidden border-t border-black/5 bg-white/90 backdrop-blur">
+                <div className="md:hidden absolute top-full left-0 w-full border-t border-black/5 bg-white/90 backdrop-blur">
                     <nav className="flex flex-col gap-4 px-6 py-6 text-sm text-black/70">
                         <Link
                             href="/programs"

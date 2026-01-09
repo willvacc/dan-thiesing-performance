@@ -18,7 +18,7 @@ export default function HomePage() {
           <div>
             <Reveal>
               <h1 className="text-4xl font-extrabold tracking-tight text-black/90 sm:text-5xl">
-                “Coaching-Driven Training. Built for Real Results.
+                Coaching-Driven Training. Built for Real Results.
                 <span className="text-blue-600"> Start Training with Intent.</span>
               </h1>
             </Reveal>

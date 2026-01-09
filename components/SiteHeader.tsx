@@ -40,11 +40,11 @@ export default function SiteHeader() {
                     >
                         <img
                             src="/logo.png"
-                            alt="Dan Theising Performance"
+                            alt="Dan Thiesing Performance"
                             className="h-11 w-auto transition-transform duration-200 group-hover:scale-110 group-hover:rotate-[-2deg]"
                         />
                         <span className="hidden sm:inline font-semibold tracking-tight text-black/90 transition-all duration-200 group-hover:underline underline-offset-4">
-                            Dan Theising Performance
+                            Dan Thiesing Performance
                         </span>
                     </Link>
                 </motion.div>

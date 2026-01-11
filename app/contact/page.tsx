@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function ContactPage() {
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const existing = document.querySelector(
@@ -20,9 +21,34 @@ export default function ContactPage() {
         }
     }, []);
 
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setLoading(true);
+
+        const form = e.currentTarget;
+        const data = new FormData(form);
+
+        const res = await fetch("https://formspree.io/f/xaqqwrak", {
+            method: "POST",
+            body: data,
+            headers: {
+                Accept: "application/json",
+            },
+        });
+
+        setLoading(false);
+
+        if (res.ok) {
+            setSubmitted(true);
+            form.reset();
+        }
+    }
+
     return (
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12 lg:space-y-16">
+            {/* ============================= */}
             {/* HEADER */}
+            {/* ============================= */}
             <Reveal>
                 <div className="rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 lg:p-12 shadow-sm backdrop-blur">
                     <div className="max-w-3xl">
@@ -47,7 +73,9 @@ export default function ContactPage() {
                 </div>
             </Reveal>
 
+            {/* ============================= */}
             {/* MAIN */}
+            {/* ============================= */}
             <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
                 {/* CALENDLY */}
                 <Reveal delay={0.05}>
@@ -74,10 +102,9 @@ export default function ContactPage() {
                     <div className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-10 shadow-sm backdrop-blur">
                         {!submitted ? (
                             <form
-                                action="https://formspree.io/f/xaqqwrak"
-                                method="POST"
+                                onSubmit={handleSubmit}
                                 className="grid gap-4"
-                                onSubmit={() => setSubmitted(true)}
+                                noValidate
                             >
                                 <div>
                                     <h2 className="text-xl sm:text-2xl font-semibold text-black/80">
@@ -88,7 +115,11 @@ export default function ContactPage() {
                                     </p>
                                 </div>
 
-                                <input type="hidden" name="_subject" value="New Coaching Inquiry" />
+                                <input
+                                    type="hidden"
+                                    name="_subject"
+                                    value="New Coaching Inquiry"
+                                />
 
                                 <div className="grid gap-2">
                                     <label className="text-sm font-medium text-black/70">
@@ -97,7 +128,7 @@ export default function ContactPage() {
                                     <input
                                         name="name"
                                         required
-                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                         placeholder="Your name"
                                     />
                                 </div>
@@ -110,7 +141,7 @@ export default function ContactPage() {
                                         name="email"
                                         required
                                         type="email"
-                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                         placeholder="you@email.com"
                                     />
                                 </div>
@@ -123,13 +154,18 @@ export default function ContactPage() {
                                         name="message"
                                         required
                                         rows={6}
-                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                         placeholder="Sport, goals, schedule, questions..."
                                     />
                                 </div>
 
-                                <Button type="submit" variant="primary" className="w-full sm:w-auto">
-                                    Send message
+                                <Button
+                                    type="submit"
+                                    variant="primary"
+                                    disabled={loading}
+                                    className="w-full sm:w-auto"
+                                >
+                                    {loading ? "Sending..." : "Send message"}
                                 </Button>
                             </form>
                         ) : (
@@ -137,7 +173,7 @@ export default function ContactPage() {
                                 <h2 className="text-xl sm:text-2xl font-semibold text-black/80">
                                     Message sent
                                 </h2>
-                                <p className="mt-2 text-black/60">
+                                <p className="mt-2 text-black/60 leading-relaxed">
                                     Thanks for reaching out. I’ll get back to you shortly.
                                 </p>
                             </div>

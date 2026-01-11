@@ -74,7 +74,7 @@ export default function ContactPage() {
                     <div className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-10 shadow-sm backdrop-blur">
                         {!submitted ? (
                             <form
-                                action="https://formspree.io/f/REPLACE_ME"
+                                action="https://formspree.io/f/xaqqwrak"
                                 method="POST"
                                 className="grid gap-4"
                                 onSubmit={() => setSubmitted(true)}

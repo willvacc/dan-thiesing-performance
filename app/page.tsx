@@ -37,7 +37,7 @@ export default function HomePage() {
                 </Button>
 
                 <Button asChild variant="secondary">
-                  <Link href="/coaching">1-on-1 Online Coaching</Link>
+                  <Link href="/coaching">1 on 1 Online Coaching</Link>
                 </Button>
 
                 <Button

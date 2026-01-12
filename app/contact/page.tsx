@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/ui/Button";
-import { useEffect, useState } from "react";
 
 export default function ContactPage() {
     const [submitted, setSubmitted] = useState(false);
@@ -28,29 +28,29 @@ export default function ContactPage() {
         const form = e.currentTarget;
         const data = new FormData(form);
 
-        const res = await fetch("https://formspree.io/f/xaqqwrak", {
-            method: "POST",
-            body: data,
-            headers: {
-                Accept: "application/json",
-            },
-        });
+        try {
+            const res = await fetch("https://formspree.io/f/xaqqwrak", {
+                method: "POST",
+                body: data,
+                headers: { Accept: "application/json" },
+            });
 
-        setLoading(false);
-
-        if (res.ok) {
-            setSubmitted(true);
-            form.reset();
+            if (res.ok) {
+                setSubmitted(true);
+                form.reset();
+            }
+        } finally {
+            setLoading(false);
         }
     }
 
     return (
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12 lg:space-y-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-14 lg:space-y-16">
             {/* ============================= */}
             {/* HEADER */}
             {/* ============================= */}
             <Reveal>
-                <div className="rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 lg:p-12 shadow-sm backdrop-blur">
+                <section className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-12 shadow-sm backdrop-blur">
                     <div className="max-w-3xl">
                         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black/85">
                             Contact
@@ -70,16 +70,16 @@ export default function ContactPage() {
                             .
                         </p>
                     </div>
-                </div>
+                </section>
             </Reveal>
 
             {/* ============================= */}
-            {/* MAIN */}
+            {/* MAIN CONTENT */}
             {/* ============================= */}
             <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
                 {/* CALENDLY */}
                 <Reveal delay={0.05}>
-                    <div className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-10 shadow-sm backdrop-blur">
+                    <section className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-10 shadow-sm backdrop-blur">
                         <h2 className="text-xl sm:text-2xl font-semibold text-black/80">
                             Book a Free Consultation
                         </h2>
@@ -94,17 +94,17 @@ export default function ContactPage() {
                                 style={{ minWidth: "320px", height: "720px" }}
                             />
                         </div>
-                    </div>
+                    </section>
                 </Reveal>
 
                 {/* FORM */}
                 <Reveal delay={0.1}>
-                    <div className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-10 shadow-sm backdrop-blur">
+                    <section className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-10 shadow-sm backdrop-blur">
                         {!submitted ? (
                             <form
                                 onSubmit={handleSubmit}
-                                className="grid gap-4"
                                 noValidate
+                                className="grid gap-4"
                             >
                                 <div>
                                     <h2 className="text-xl sm:text-2xl font-semibold text-black/80">
@@ -128,8 +128,8 @@ export default function ContactPage() {
                                     <input
                                         name="name"
                                         required
-                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                         placeholder="Your name"
+                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                     />
                                 </div>
 
@@ -139,10 +139,10 @@ export default function ContactPage() {
                                     </label>
                                     <input
                                         name="email"
-                                        required
                                         type="email"
-                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                                        required
                                         placeholder="you@email.com"
+                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                     />
                                 </div>
 
@@ -152,10 +152,10 @@ export default function ContactPage() {
                                     </label>
                                     <textarea
                                         name="message"
-                                        required
                                         rows={6}
-                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                                        required
                                         placeholder="Sport, goals, schedule, questions..."
+                                        className="rounded-xl border border-black/10 bg-white/80 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
                                     />
                                 </div>
 
@@ -178,7 +178,7 @@ export default function ContactPage() {
                                 </p>
                             </div>
                         )}
-                    </div>
+                    </section>
                 </Reveal>
             </div>
         </div>

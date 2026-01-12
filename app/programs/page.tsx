@@ -77,7 +77,7 @@ export default function ProgramsPage() {
                                     Built around your specific goals, equipment, and availability with ongoing adjustments and accountability.
                                 </p>
                                 <p className="mt-4 text-black/60 leading-relaxed">
-                                    Best for individuals who want personalized guidance and long-term development.
+                                    Best for individuals who want personalized guidance and long term development.
                                 </p>
                             </div>
 

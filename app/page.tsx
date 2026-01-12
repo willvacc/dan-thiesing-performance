@@ -147,7 +147,7 @@ export default function HomePage() {
       {/* STATS */}
       <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <Stat value="+10 yrs" label="Coaching Experience" />
-        <Stat value="Athlete-First" label="Programming Philosophy" delay={0.06} />
+        <Stat value="Athlete First" label="Programming Philosophy" delay={0.06} />
         <Stat value="Performance" label="Built for sport carryover" delay={0.12} />
       </section>
 

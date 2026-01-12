@@ -17,7 +17,7 @@ export default function CoachingPage() {
                         <p className="mt-4 text-black/60 leading-relaxed">
                             Individualized strength and conditioning programs for all levels of individuals.
                             From high level athletes to everyday gym goers, and everyone in-between.
-                            Programming, check-ins, and accountability — built around your specific goals.
+                            Programming, check-ins, and accountability, built around your specific goals.
                         </p>
 
                         <div className="mt-8">
@@ -45,7 +45,7 @@ export default function CoachingPage() {
                             img: "/linebacker-speed-work.png",
                             alt: "Professional linebacker performing off-season speed training",
                             copy: [
-                                "The same principles used with professional athletes apply to every program; structured progression, measurable performance, and long-term durability.",
+                                "The same principles used with professional athletes apply to every program; structured progression, measurable performance, and long term durability.",
                                 "Training decisions are intentional, data-driven, and aligned with competitive demands.",
                             ],
                         },

@@ -15,6 +15,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-sky-300/25 blur-3xl" />
 
         <div className="relative grid gap-10 p-10 sm:p-14 lg:grid-cols-2 lg:items-center">
+          {/* LEFT COLUMN */}
           <div>
             <Reveal>
               <h1 className="text-4xl font-extrabold tracking-tight text-black/90 sm:text-5xl">
@@ -25,7 +26,7 @@ export default function HomePage() {
 
             <Reveal delay={0.08}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-black/60 sm:text-lg">
-                Dan Thiesing Performance delivers structured training and coaching that helps you achieve your specific goals. 
+                Dan Thiesing Performance delivers structured training and coaching that helps you achieve your specific goals.
                 Train with intent, progress with confidence.
               </p>
             </Reveal>
@@ -40,31 +41,28 @@ export default function HomePage() {
                   <Link href="/coaching">1 on 1 Online Coaching</Link>
                 </Button>
 
-                <Button
-                  asChild
-                  variant="ghost"
-                >
-                  <a href="https://instagram.com/danthiesing" target="_blank">
+                <Button asChild variant="ghost">
+                  <a
+                    href="https://instagram.com/danthiesing"
+                    target="_blank"
+                    className="flex items-center gap-2"
+                  >
+                    <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500/80" />
                     Follow on Instagram
                   </a>
                 </Button>
               </div>
             </Reveal>
-
-            <Reveal delay={0.22}>
-              <div className="mt-8 flex items-center gap-3 text-sm text-black/50">
-                <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500/80" />
-                Performance-first strength & conditioning
-              </div>
-            </Reveal>
           </div>
 
-          {/* right side “visual” panel */}
+          {/* RIGHT COLUMN */}
           <Reveal delay={0.12}>
             <div className="relative">
               <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-white/30 to-white/0" />
               <div className="rounded-3xl border border-black/5 bg-white/50 p-8 shadow-sm backdrop-blur">
-                <div className="text-sm font-semibold text-black/70">What athletes get</div>
+                <div className="text-sm font-semibold text-black/70">
+                  What athletes get
+                </div>
                 <div className="mt-6 grid gap-4">
                   <Card title="Train Smarter" desc="Structured programming built around the athlete, not random movements." />
                   <Card title="Get Faster + Stronger" desc="Strength, power, and speed work that carries over to your sport." />
@@ -75,6 +73,8 @@ export default function HomePage() {
           </Reveal>
         </div>
       </section>
+
+
       {/* ABOUT SECTION */}
       <section className="relative mt-32">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-6 md:grid-cols-2 items-center">

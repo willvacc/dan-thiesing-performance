@@ -87,15 +87,36 @@ export default function ContactPage() {
                             A no-pressure call to see if working together makes sense.
                         </p>
 
-                        <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/40">
-                            <div
-                                className="calendly-inline-widget w-full"
-                                data-url="https://calendly.com/danthiesing"
-                                style={{ minWidth: "320px", height: "720px" }}
-                            />
+                        {/* MOBILE: button */}
+                        <div className="block lg:hidden">
+                            <Button
+                                asChild
+                                variant="primary"
+                                className="w-full"
+                            >
+                                <a
+                                    href="https://calendly.com/danthiesing"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Open Scheduling
+                                </a>
+                            </Button>
+                        </div>
+
+                        {/* DESKTOP: inline widget */}
+                        <div className="hidden lg:block">
+                            <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/40">
+                                <div
+                                    className="calendly-inline-widget"
+                                    data-url="https://calendly.com/danthiesing"
+                                    style={{ height: "720px" }}
+                                />
+                            </div>
                         </div>
                     </section>
                 </Reveal>
+
 
                 {/* FORM */}
                 <Reveal delay={0.1}>

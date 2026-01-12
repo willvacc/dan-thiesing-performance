@@ -51,7 +51,7 @@ export default function ContactPage() {
             {/* ============================= */}
             <Reveal>
                 <section className="rounded-3xl border border-black/5 bg-white/70 p-6 sm:p-8 lg:p-12 shadow-sm backdrop-blur">
-                    <div className="max-w-3xl">
+                    <div className="sm:max-w-3xl">
                         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black/85">
                             Contact
                         </h1>

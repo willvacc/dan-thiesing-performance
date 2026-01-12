@@ -9,15 +9,16 @@ export default function CoachingPage() {
             {/* HERO */}
             {/* ============================= */}
             <Reveal>
-                <div className="rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 md:p-12 shadow-sm backdrop-blur">
+                <section className="rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 lg:p-12 shadow-sm backdrop-blur">
                     <div className="max-w-3xl">
-                        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-black/85">
-                            1 on 1 Online Coaching
+                        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black/85">
+                            1-on-1 Online Coaching
                         </h1>
-                        <p className="mt-4 text-black/60 leading-relaxed">
-                            Individualized strength and conditioning programs for all levels of individuals.
-                            From high level athletes to everyday gym goers, and everyone in-between.
-                            Programming, check-ins, and accountability, built around your specific goals.
+
+                        <p className="mt-4 text-base sm:text-lg text-black/60 leading-relaxed">
+                            Personalized strength and conditioning built around your goals,
+                            schedule, and training environment. This is not templated programming;
+                            every decision is intentional, structured, and designed for long term progress.
                         </p>
 
                         <div className="mt-8">
@@ -25,28 +26,29 @@ export default function CoachingPage() {
                                 <a
                                     href="https://calendly.com/danthiesing"
                                     target="_blank"
+                                    rel="noreferrer"
                                 >
-                                    Book a 1 on 1 Consultation
+                                    Book a Free Consultation
                                 </a>
                             </Button>
                         </div>
                     </div>
-                </div>
+                </section>
             </Reveal>
 
             {/* ============================= */}
             {/* WHO IT’S FOR */}
             {/* ============================= */}
             <Reveal delay={0.08}>
-                <div className="grid gap-10 lg:grid-cols-2">
+                <section className="grid gap-10 lg:grid-cols-2">
                     {[
                         {
-                            title: "Built for High-Level Athletes",
+                            title: "Built for High Level Athletes",
                             img: "/linebacker-speed-work.png",
                             alt: "Professional linebacker performing off-season speed training",
                             copy: [
-                                "The same principles used with professional athletes apply to every program; structured progression, measurable performance, and long term durability.",
-                                "Training decisions are intentional, data-driven, and aligned with competitive demands.",
+                                "The same principles used with professional athletes apply to every program... structured progression, measurable outputs, and long term durability.",
+                                "Training decisions are data-driven, sport specific, and aligned with competitive demands.",
                             ],
                         },
                         {
@@ -54,8 +56,8 @@ export default function CoachingPage() {
                             img: "/college-lacrosse.png",
                             alt: "College lacrosse athlete performing velocity-based strength training",
                             copy: [
-                                "Structured programs designed to take the guesswork out of the gym. Built for individuals who want clarity, progression, and real strength gains.",
-                                "Nothing is generic; every plan is built around the individual.",
+                                "Clear, structured programming that removes guesswork and builds real strength over time.",
+                                "Every plan is tailored to the individual - goals, history, schedule, and available equipment.",
                             ],
                         },
                     ].map((card) => (
@@ -79,6 +81,7 @@ export default function CoachingPage() {
                                     <h2 className="text-2xl font-semibold text-black/85">
                                         {card.title}
                                     </h2>
+
                                     {card.copy.map((p) => (
                                         <p
                                             key={p}
@@ -91,60 +94,60 @@ export default function CoachingPage() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </section>
             </Reveal>
 
             {/* ============================= */}
-            {/* HOW IT WORKS */}
+            {/* HOW IT WORKS (EDITORIAL — NO CARDS) */}
             {/* ============================= */}
-            <div className="grid gap-6 md:grid-cols-3">
+            <section className="grid gap-10 lg:grid-cols-3">
                 {[
                     {
-                        title: "Custom Plan",
-                        desc: "Training built around your equipment access, schedule, and performance goals.",
+                        title: "Custom Programming",
+                        desc: "Training built specifically around your sport, schedule, equipment access, and performance goals, not templates.",
                     },
                     {
-                        title: "Ongoing Check-ins",
-                        desc: "Regular reviews and adjustments based on performance, readiness, and recovery.",
+                        title: "Ongoing Check-Ins",
+                        desc: "Regular reviews and adjustments to keep progress moving and prevent stalls, setbacks, or wasted training time.",
                     },
                     {
-                        title: "Accountability",
-                        desc: "Clear progression, structure, and consistent execution over time.",
+                        title: "Built-In Accountability",
+                        desc: "Clear structure, expectations, and follow through so training actually gets done consistently.",
                     },
                 ].map((item, i) => (
                     <Reveal key={item.title} delay={0.06 * i}>
-                        <div className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur">
-                            <div className="font-semibold text-black/80">
+                        <div className="space-y-3">
+                            <div className="text-sm font-semibold uppercase tracking-wide text-black/50">
                                 {item.title}
                             </div>
-                            <p className="mt-3 text-sm text-black/55 leading-relaxed">
+                            <p className="text-sm sm:text-base text-black/60 leading-relaxed">
                                 {item.desc}
                             </p>
                         </div>
                     </Reveal>
                 ))}
-            </div>
+            </section>
 
             {/* ============================= */}
             {/* TRAINING GALLERY */}
             {/* ============================= */}
             <Reveal delay={0.12}>
-                <div className="rounded-3xl border border-black/5 bg-white/60 p-8 sm:p-10 shadow-sm backdrop-blur">
+                <section className="rounded-3xl border border-black/5 bg-white/60 p-8 sm:p-10 shadow-sm backdrop-blur">
                     <div className="max-w-2xl mb-8">
                         <h3 className="text-2xl font-semibold text-black/85">
                             What Training Looks Like
                         </h3>
                         <p className="mt-3 text-black/60 leading-relaxed">
-                            A look inside the environment, coaching, and day-to-day work that
-                            supports long-term performance.
+                            A look inside the training environment, coaching process, and
+                            day-to-day work that supports long term performance.
                         </p>
                     </div>
 
                     <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
                         {[
                             "/example-1.png",
-                            "/example-2.png",
                             "/example-3.jpg",
+                            "/example-2.png",
                             "/example-4.jpg",
                             "/example-5.jpg",
                         ].map((src) => (
@@ -161,30 +164,35 @@ export default function CoachingPage() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </section>
             </Reveal>
 
             {/* ============================= */}
             {/* FINAL CTA */}
             {/* ============================= */}
             <Reveal delay={0.1}>
-                <div className="rounded-3xl border border-black/5 bg-white/60 p-8 sm:p-10 shadow-sm backdrop-blur text-center">
+                <section className="rounded-3xl border border-black/5 bg-white/60 p-8 sm:p-10 shadow-sm backdrop-blur text-center">
                     <h3 className="text-2xl font-semibold text-black/85">
                         Ready to Get Started?
                     </h3>
-                    <p className="mt-3 max-w-xl mx-auto text-black/60">
-                        Book a free consultation to discuss your goals, background, and
-                        whether this coaching is the right fit.
+
+                    <p className="mt-3 max-w-xl mx-auto text-black/60 leading-relaxed">
+                        Book a free consultation to discuss your goals, background,
+                        and whether this coaching is the right fit.
                     </p>
 
                     <div className="mt-6">
                         <Button asChild variant="primary" className="w-full sm:w-auto">
-                            <a href="https://calendly.com/danthiesing" target="_blank">
+                            <a
+                                href="https://calendly.com/danthiesing"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 Book Your Consultation
                             </a>
                         </Button>
                     </div>
-                </div>
+                </section>
             </Reveal>
         </div>
     );

@@ -27,6 +27,7 @@ export default function CoachingPage() {
                                     href="https://calendly.com/danthiesing"
                                     target="_blank"
                                     rel="noreferrer"
+                                    className="flex w-full items-center justify-center"
                                 >
                                     Book a Free Consultation
                                 </a>
@@ -136,7 +137,6 @@ export default function CoachingPage() {
                     </h3>
                 </Reveal>
 
-                {/* One-Off Programs */}
                 <div className="space-y-4">
                     <Reveal>
                         <div className="text-sm font-semibold uppercase tracking-wide text-black/50">
@@ -145,27 +145,24 @@ export default function CoachingPage() {
                     </Reveal>
 
                     <div className="grid gap-4 sm:grid-cols-3">
-                        <Button asChild variant="secondary">
-                            <a href="https://buy.stripe.com/cNi00i8wa8cO0Zo4kr3VC03" target="_blank">
-                                4 Week Program
-                            </a>
-                        </Button>
-
-                        <Button asChild variant="secondary">
-                            <a href="https://buy.stripe.com/14A9AS9Ae0Km0Zog393VC04" target="_blank">
-                                8 Week Program
-                            </a>
-                        </Button>
-
-                        <Button asChild variant="secondary">
-                            <a href="https://buy.stripe.com/bJeaEW5jYfFgfUig393VC05" target="_blank">
-                                12 Week Program
-                            </a>
-                        </Button>
+                        {[
+                            ["4 Week Program", "https://buy.stripe.com/cNi00i8wa8cO0Zo4kr3VC03"],
+                            ["8 Week Program", "https://buy.stripe.com/14A9AS9Ae0Km0Zog393VC04"],
+                            ["12 Week Program", "https://buy.stripe.com/bJeaEW5jYfFgfUig393VC05"],
+                        ].map(([label, url]) => (
+                            <Button key={label} asChild variant="secondary">
+                                <a
+                                    href={url}
+                                    target="_blank"
+                                    className="flex w-full items-center justify-center"
+                                >
+                                    {label}
+                                </a>
+                            </Button>
+                        ))}
                     </div>
                 </div>
 
-                {/* Ongoing Coaching */}
                 <div className="space-y-4">
                     <Reveal>
                         <div className="text-sm font-semibold uppercase tracking-wide text-black/50">
@@ -174,23 +171,21 @@ export default function CoachingPage() {
                     </Reveal>
 
                     <div className="grid gap-4 sm:grid-cols-3">
-                        <Button asChild variant="primary">
-                            <a href="https://buy.stripe.com/6oUbJ05jYct48rQbMT3VC00" target="_blank">
-                                2 Days / Week
-                            </a>
-                        </Button>
-
-                        <Button asChild variant="primary">
-                            <a href="https://buy.stripe.com/5kQeVc8wafFggYm18f3VC01" target="_blank">
-                                3 Days / Week
-                            </a>
-                        </Button>
-
-                        <Button asChild variant="primary">
-                            <a href="https://buy.stripe.com/bJe28q13IeBcbE2cQX3VC02" target="_blank">
-                                4+ Days / Week
-                            </a>
-                        </Button>
+                        {[
+                            ["2 Days / Week", "https://buy.stripe.com/6oUbJ05jYct48rQbMT3VC00"],
+                            ["3 Days / Week", "https://buy.stripe.com/5kQeVc8wafFggYm18f3VC01"],
+                            ["4+ Days / Week", "https://buy.stripe.com/bJe28q13IeBcbE2cQX3VC02"],
+                        ].map(([label, url]) => (
+                            <Button key={label} asChild variant="primary">
+                                <a
+                                    href={url}
+                                    target="_blank"
+                                    className="flex w-full items-center justify-center"
+                                >
+                                    {label}
+                                </a>
+                            </Button>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -254,6 +249,7 @@ export default function CoachingPage() {
                                 href="https://calendly.com/danthiesing"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="flex w-full items-center justify-center"
                             >
                                 Book Your Consultation
                             </a>

@@ -16,8 +16,12 @@ export default function Reveal({
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 16 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, y: 16, pointerEvents: "none" }}
+            animate={
+                isInView
+                    ? { opacity: 1, y: 0, pointerEvents: "auto" }
+                    : {}
+            }
             transition={{
                 duration: 0.75,
                 ease: [0.22, 1, 0.36, 1],

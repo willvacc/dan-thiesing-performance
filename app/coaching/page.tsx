@@ -12,7 +12,7 @@ export default function CoachingPage() {
                 <section className="rounded-3xl border border-black/5 bg-white/70 p-8 sm:p-10 lg:p-12 shadow-sm backdrop-blur">
                     <div className="max-w-3xl">
                         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black/85">
-                            1-on-1 Online Coaching
+                            1 on 1 Online Coaching
                         </h1>
 
                         <p className="mt-4 text-base sm:text-lg text-black/60 leading-relaxed">
@@ -66,7 +66,6 @@ export default function CoachingPage() {
                             className="rounded-3xl border border-black/5 bg-white/70 p-8 shadow-sm backdrop-blur"
                         >
                             <div className="grid gap-6 md:grid-cols-2">
-                                {/* Image */}
                                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
                                     <Image
                                         src={card.img}
@@ -76,7 +75,6 @@ export default function CoachingPage() {
                                     />
                                 </div>
 
-                                {/* Text */}
                                 <div className="flex flex-col justify-center">
                                     <h2 className="text-2xl font-semibold text-black/85">
                                         {card.title}
@@ -98,7 +96,7 @@ export default function CoachingPage() {
             </Reveal>
 
             {/* ============================= */}
-            {/* HOW IT WORKS (EDITORIAL — NO CARDS) */}
+            {/* HOW IT WORKS */}
             {/* ============================= */}
             <section className="grid gap-10 lg:grid-cols-3">
                 {[
@@ -126,6 +124,75 @@ export default function CoachingPage() {
                         </div>
                     </Reveal>
                 ))}
+            </section>
+
+            {/* ============================= */}
+            {/* COACHING OPTIONS */}
+            {/* ============================= */}
+            <section className="space-y-10">
+                <Reveal>
+                    <h3 className="text-2xl font-semibold text-black/85">
+                        Coaching Options
+                    </h3>
+                </Reveal>
+
+                {/* One-Off Programs */}
+                <div className="space-y-4">
+                    <Reveal>
+                        <div className="text-sm font-semibold uppercase tracking-wide text-black/50">
+                            One-Off Programs
+                        </div>
+                    </Reveal>
+
+                    <div className="grid gap-4 sm:grid-cols-3">
+                        <Button asChild variant="secondary">
+                            <a href="https://buy.stripe.com/cNi00i8wa8cO0Zo4kr3VC03" target="_blank">
+                                4 Week Program
+                            </a>
+                        </Button>
+
+                        <Button asChild variant="secondary">
+                            <a href="https://buy.stripe.com/14A9AS9Ae0Km0Zog393VC04" target="_blank">
+                                8 Week Program
+                            </a>
+                        </Button>
+
+                        <Button asChild variant="secondary">
+                            <a href="https://buy.stripe.com/bJeaEW5jYfFgfUig393VC05" target="_blank">
+                                12 Week Program
+                            </a>
+                        </Button>
+                    </div>
+                </div>
+
+                {/* Ongoing Coaching */}
+                <div className="space-y-4">
+                    <Reveal>
+                        <div className="text-sm font-semibold uppercase tracking-wide text-black/50">
+                            Ongoing 1 on 1 Coaching
+                        </div>
+                    </Reveal>
+
+                    <div className="grid gap-4 sm:grid-cols-3">
+                        <Button asChild variant="primary">
+                            <a href="https://buy.stripe.com/6oUbJ05jYct48rQbMT3VC00" target="_blank">
+                                2 Days / Week
+                            </a>
+                        </Button>
+
+                        <Button asChild variant="primary">
+                            <a href="https://buy.stripe.com/5kQeVc8wafFggYm18f3VC01" target="_blank">
+                                3 Days / Week
+                            </a>
+                        </Button>
+
+                        <Button asChild variant="primary">
+                            <a href="https://buy.stripe.com/bJe28q13IeBcbE2cQX3VC02" target="_blank">
+                                4+ Days / Week
+                            </a>
+                        </Button>
+                    </div>
+                </div>
             </section>
 
             {/* ============================= */}
